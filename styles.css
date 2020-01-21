@@ -1,0 +1,31 @@
+:root {
+  --black: hsl(213, 15%, 29%);
+  --blue: #4589dd;
+  --br: 6px;
+  --bs: 0 6px 6px hsla(213, 92%, 10%, 26%), 0 10px 20px hsla(213, 92%, 10%, 19%);
+  --dark-gray: hsl(213, 2%, 51%);
+  --gray: hsl(355, 16%, 69%);
+  --green: hsl(168, 92%, 44%);
+  --light-gray: #e6f4f1;
+  --max-width: 1200px;
+  --white: hsl(0, 0%, 100%);
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  color: inherit;
+  font-family: inherit;
+}
+html,
+body {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+}
+p {
+  line-height: 1.6;
+}
