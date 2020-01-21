@@ -1,5 +1,6 @@
-import SearchBar from './SearchBar';
 import Link from 'next/link';
+
+import SearchBar from './SearchBar';
 
 const Header = () => (
   <header>

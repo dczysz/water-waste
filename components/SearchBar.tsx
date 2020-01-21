@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-
-import Dropdown from './Dropdown';
-import data from '../data';
 import { useRouter } from 'next/router';
+
+import data from '../data';
+import Dropdown from './Dropdown';
 
 const SearchBar = () => {
   const MAX_DROPDOWN_ITEMS = 8;

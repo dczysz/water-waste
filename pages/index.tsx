@@ -1,6 +1,7 @@
-import Layout from '../components/Layout';
-import data from '../data';
 import { useState } from 'react';
+
+import data from '../data';
+import Layout from '../components/Layout';
 import ItemInfo from '../components/ItemInfo';
 import LinkBlank from '../components/LinkBlank';
 
