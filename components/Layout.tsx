@@ -9,7 +9,9 @@ const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Head>
-        <title>Water Waste {router.query.name || ''}</title>
+        <title>
+          Water Waste{router.query.name ? ` - ${router.query.name}` : ''}
+        </title>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="theme-color" content="#4589dd" />
         <meta
