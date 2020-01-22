@@ -1,6 +1,6 @@
 :root {
   --black: hsl(213, 15%, 29%);
-  --blue: #4589dd;
+  --blue: hsl(213, 69%, 57%);
   --bp-sm: 576px;
   --bp-md: 768px;
   --bp-lg: 992px;
@@ -10,7 +10,7 @@
   --dark-gray: hsl(213, 2%, 51%);
   --gray: hsl(355, 16%, 69%);
   --green: hsl(168, 92%, 44%);
-  --light-gray: #e6f4f1;
+  --light-gray: hsl(167, 39%, 93%);
   --max-width: var(--bp-xl);
   --white: hsl(0, 0%, 100%);
 }
