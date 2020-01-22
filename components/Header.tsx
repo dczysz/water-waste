@@ -29,9 +29,15 @@ const Header = () => (
         position: relative;
       }
       a {
+        border: 4px solid var(--blue);
+        border-radius: calc(var(--br));
+        padding: 0.25rem;
         text-decoration: none;
         text-wrap: no-wrap;
-        overflow-x: hidden;
+      }
+      a:focus {
+        border-color: var(--white);
+        outline: none;
       }
       h1 {
         color: var(--white);
