@@ -71,9 +71,6 @@ const SearchBar = () => {
         }
         input,
         button {
-          background-color: transparent;
-          border: none;
-          font-size: inherit;
           margin: 0;
           padding: 0;
         }
@@ -85,9 +82,7 @@ const SearchBar = () => {
         }
         button:disabled {
           color: var(--dark-gray);
-        }
-        button:not(:disabled) {
-          cursor: pointer;
+          cursor: default;
         }
         .dropdown {
           display: none;

@@ -61,7 +61,23 @@ const Index = () => {
             margin: 0 auto;
             max-width: 80ch;
           }
-          .;
+          button {
+            background-color: transparent;
+            border: none;
+            border-radius: var(--br);
+            color: var(--blue);
+            cursor: pointer;
+            font-weight: bold;
+            padding: 1rem;
+            border: 4px solid var(--blue);
+          }
+          button:focus {
+            box-shadow: 0 0 0 4px var(--white), 0 0 0 8px var(--blue);
+          }
+          button:hover {
+            background-color: var(--blue);
+            color: var(--white);
+          }
         `}
       </style>
     </Layout>

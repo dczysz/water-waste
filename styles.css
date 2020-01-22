@@ -33,6 +33,15 @@ body {
 p {
   line-height: 1.6;
 }
+input,
+button {
+  background-color: transparent;
+  border: none;
+  font-size: inherit;
+}
+button {
+  cursor: pointer;
+}
 
 /* All media queries here until styled-jsx adds support */
 /* Tried styled-components but got FOUC */
