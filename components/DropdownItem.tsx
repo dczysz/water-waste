@@ -44,6 +44,7 @@ const DropdownItem: React.FC<Props> = ({ name, query, disabled = false }) => {
             text-decoration: underline;
           }
           .item.disabled {
+            background-color: var(--light-gray);
             color: var(--dark-gray);
             font-style: italic;
             padding: 0.5rem 1rem;

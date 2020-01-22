@@ -5,9 +5,10 @@ import data from '../data';
 import Dropdown from './Dropdown';
 
 const SearchBar = () => {
-  const MAX_DROPDOWN_ITEMS = 8;
   const [query, setQuery] = useState('');
   const router = useRouter();
+
+  const showDropdown = query !== '';
   const matches = findMatches();
 
   useEffect(() => {
@@ -24,15 +25,13 @@ const SearchBar = () => {
   };
 
   function findMatches() {
-    return query === ''
-      ? []
-      : data.filter(
-          d => d.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
-        );
+    return showDropdown
+      ? data.filter(d => d.name.toLowerCase().indexOf(query.toLowerCase()) >= 0)
+      : [];
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="search">
       <input
         value={query}
         onChange={e => setQuery(e.target.value)}
@@ -41,42 +40,57 @@ const SearchBar = () => {
       <button type="submit" disabled={matches.length < 1}>
         Go
       </button>
-      {matches.length ? (
-        <Dropdown items={matches} query={query} maxShown={MAX_DROPDOWN_ITEMS} />
-      ) : null}
+      <div className="dropdown">
+        {showDropdown ? <Dropdown items={matches} query={query} /> : null}
+      </div>
 
       <style jsx>{`
         form {
           align-items: center;
           background-color: var(--white);
           border-radius: var(--br);
-          border-bottom-left-radius: ${matches.length ? 0 : 'var(--br)'};
-          border-bottom-right-radius: ${matches.length ? 0 : 'var(--br)'};
-          box-shadow: ${matches.length ? 'var(--bs)' : 'none'};
           display: flex;
-          padding: 0 0.75rem;
+          max-width: 40vw;
+          padding: 0 1rem;
           position: relative;
+          width: 16rem;
           z-index: 1;
         }
         form:focus-within {
+          border-bottom-left-radius: ${showDropdown ? 0 : 'var(--br)'};
+          border-bottom-right-radius: ${showDropdown ? 0 : 'var(--br)'};
           box-shadow: var(--bs);
+          max-width: none;
+          position: absolute;
+          right: 1rem;
+          top: 1rem;
+          width: calc(100% - 2rem);
+        }
+        form:focus-within .dropdown {
+          display: block;
         }
         input,
         button {
+          background-color: transparent;
           border: none;
           font-size: inherit;
-          background-color: transparent;
+          margin: 0;
+          padding: 0;
         }
         input {
-          height: 2.5rem;
-          max-width: 20vw;
-          margin-right: 0.75rem;
+          height: 3rem;
+          margin-right: 1rem;
+          min-width: 0;
+          width: 100%;
         }
         button:disabled {
           color: var(--dark-gray);
         }
         button:not(:disabled) {
           cursor: pointer;
+        }
+        .dropdown {
+          display: none;
         }
       `}</style>
     </form>

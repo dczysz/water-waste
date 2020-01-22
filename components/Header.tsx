@@ -16,17 +16,22 @@ const Header = () => (
     <style jsx>{`
       header {
         background-color: var(--blue);
+        height: 5rem;
       }
-      header div {
+      header > div {
         align-items: center;
         display: flex;
+        height: 100%;
         justify-content: space-between;
         margin: 0 auto;
         max-width: var(--max-width);
         padding: 1rem;
+        position: relative;
       }
       a {
         text-decoration: none;
+        text-wrap: no-wrap;
+        overflow-x: hidden;
       }
       h1 {
         color: var(--white);
