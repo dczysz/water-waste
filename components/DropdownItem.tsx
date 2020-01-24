@@ -1,12 +1,25 @@
 import Link from 'next/link';
+import { useRef, useEffect } from 'react';
 
 interface Props {
   name: string;
   query?: string;
   disabled?: boolean;
+  focus?: boolean;
 }
 
-const DropdownItem: React.FC<Props> = ({ name, query, disabled = false }) => {
+const DropdownItem: React.FC<Props> = ({
+  name,
+  query,
+  disabled = false,
+  focus = false,
+}) => {
+  const itemRef = useRef<HTMLAnchorElement>(null!);
+
+  useEffect(() => {
+    focus && itemRef.current && itemRef.current.focus();
+  }, [focus]);
+
   const highlightLink = (text: string, query: string) => {
     const start = text.toLowerCase().indexOf(query.toLowerCase());
     const end = start + query.length;
@@ -25,7 +38,9 @@ const DropdownItem: React.FC<Props> = ({ name, query, disabled = false }) => {
         <span className="item disabled">{name}</span>
       ) : (
         <Link href="/info/[name]" as={`/info/${name}`}>
-          <a className="item">{query ? highlightLink(name, query) : name}</a>
+          <a className="item" ref={itemRef}>
+            {query ? highlightLink(name, query) : name}
+          </a>
         </Link>
       )}
       <style jsx global>

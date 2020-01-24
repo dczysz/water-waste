@@ -5,12 +5,13 @@ interface DropdownProps {
     name: string;
   }[];
   query: string;
+  focusIndex: number;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ items, query }) => {
-  const dropDownItems = items.map(d => (
+const Dropdown: React.FC<DropdownProps> = ({ items, query, focusIndex }) => {
+  const dropDownItems = items.map((d, i) => (
     <li key={d.name}>
-      <DropdownItem name={d.name} query={query} />
+      <DropdownItem name={d.name} query={query} focus={focusIndex === i} />
     </li>
   ));
 
