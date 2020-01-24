@@ -9,20 +9,22 @@ interface DropdownProps {
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ items, query, focusIndex }) => {
-  const dropDownItems = items.map((d, i) => (
-    <li key={d.name}>
-      <DropdownItem name={d.name} query={query} focus={focusIndex === i} />
-    </li>
-  ));
-
   return (
     <div className="dropdown">
-      <ul className="itemList">{dropDownItems}</ul>
+      <ul className="itemList">
+        {items.map((d, i) => (
+          <li key={d.name}>
+            <DropdownItem
+              name={d.name}
+              query={query}
+              focus={focusIndex === i}
+            />
+          </li>
+        ))}
+      </ul>
       <div className="total">
         <DropdownItem
-          name={`${dropDownItems.length} result${
-            dropDownItems.length === 1 ? '' : 's'
-          }`}
+          name={`${items.length} result${items.length === 1 ? '' : 's'}`}
           disabled
         />
       </div>
