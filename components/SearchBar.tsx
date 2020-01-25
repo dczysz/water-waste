@@ -175,8 +175,8 @@ const SearchBar = () => {
           width: 100%;
         }
         button:disabled {
-          color: var(--dark-gray);
           cursor: default;
+          opacity: 0.6;
         }
         .dropdown {
           display: none;
