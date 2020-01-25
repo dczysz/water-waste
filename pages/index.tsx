@@ -126,7 +126,7 @@ const Index = () => {
             color: var(--blue);
             cursor: pointer;
             font-weight: bold;
-            margin: 1rem;
+            margin: 2rem;
             padding: 1rem;
           }
           button:focus {
