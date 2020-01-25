@@ -1,5 +1,5 @@
 :root {
-  --black: hsl(213, 15%, 29%);
+  --black: hsl(243, 17%, 18%);
   --blue: hsl(213, 69%, 57%);
   --bp-sm: 576px;
   --bp-md: 768px;
@@ -7,11 +7,11 @@
   --bp-xl: 1200px;
   --br: 6px;
   --bs: 0 6px 6px hsla(213, 92%, 10%, 26%), 0 10px 20px hsla(213, 92%, 10%, 19%);
-  --dark-gray: hsl(213, 2%, 51%);
-  --gray: hsl(355, 16%, 69%);
+  --gray: hsl(243, 17%, 29%);
   --green: hsl(168, 92%, 44%);
-  --light-gray: hsl(167, 39%, 93%);
+  --light-gray: hsl(213, 39%, 93%);
   --max-width: var(--bp-xl);
+  --red: hsl(348, 100%, 70%);
   --white: hsl(0, 0%, 100%);
 }
 *,
@@ -29,6 +29,10 @@ body {
   font-size: 16px;
   margin: 0;
   padding: 0;
+}
+h1,
+p {
+  margin: 1rem 0;
 }
 p {
   line-height: 1.6;

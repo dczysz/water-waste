@@ -1,13 +1,14 @@
 import { useState } from 'react';
 
-import data from '../data';
+import { foods } from '../data';
 import Layout from '../components/Layout';
 import ItemInfo from '../components/ItemInfo';
 import LinkBlank from '../components/LinkBlank';
+import Graphic from '../components/assets/Graphic';
 
 const Index = () => {
   const [item, setItem] = useState(
-    data[Math.floor(Math.random() * data.length)]
+    foods[Math.floor(Math.random() * foods.length)]
   );
 
   return (
@@ -15,11 +16,16 @@ const Index = () => {
       <div className="heading">
         <h1>How much water does food production use?</h1>
         <button
-          onClick={() => setItem(data[Math.floor(Math.random() * data.length)])}
+          onClick={() =>
+            setItem(foods[Math.floor(Math.random() * foods.length)])
+          }
         >
           Random
         </button>
         <ItemInfo item={item} />
+        <div className="graphic">
+          <Graphic />
+        </div>
       </div>
       <section>
         <article>
@@ -77,6 +83,11 @@ const Index = () => {
           button:hover {
             background-color: var(--blue);
             color: var(--white);
+          }
+          .graphic {
+            margin: 0 auto;
+            max-width: 300px;
+            padding: 0 1rem 2rem 1rem;
           }
         `}
       </style>
