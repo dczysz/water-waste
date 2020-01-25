@@ -1,4 +1,4 @@
-export default [
+export const foods = [
   {
     name: 'Wheat',
     galPerOz: 16.41,

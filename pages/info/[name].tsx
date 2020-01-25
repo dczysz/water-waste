@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
 
-import data from '../../data';
+import { foods } from '../../data';
 import Layout from '../../components/Layout';
 import ItemInfo from '../../components/ItemInfo';
 
 const Info = () => {
   const router = useRouter();
-  const itemData = data.filter(d => d.name === router.query.name)[0];
+  const itemData = foods.filter(f => f.name === router.query.name)[0];
 
   return itemData ? (
     <Layout>

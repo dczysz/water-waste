@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
-import data from '../data';
+import { foods } from '../data';
 import Dropdown from './Dropdown';
 
 const SearchBar = () => {
@@ -106,10 +106,10 @@ const SearchBar = () => {
 
   function findMatches() {
     return showDropdown
-      ? data.filter(
-          d =>
+      ? foods.filter(
+          f =>
             query !== '' &&
-            d.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
+            f.name.toLowerCase().indexOf(query.toLowerCase()) >= 0
         )
       : [];
   }
@@ -132,7 +132,7 @@ const SearchBar = () => {
       <button type="submit" disabled={matches.length < 1} ref={submitBtnRef}>
         Go
       </button>
-      <div className="dropdown" onClick={() => console.log('dropdown clicked')}>
+      <div className="dropdown">
         {showDropdown && (
           <Dropdown items={matches} query={query} focusIndex={focusIndex} />
         )}
