@@ -93,10 +93,12 @@ a {
   transition: height 0.1s;
   z-index: -1;
 }
-.underline.link:hover {
+.underline.link:hover,
+.underline.link:focus-within {
   color: var(--black);
 }
-.underline.link:hover::before {
+.underline.link:hover::before,
+.underline.link:focus-within::before {
   height: 1.2em;
 }
 
