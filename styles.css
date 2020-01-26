@@ -77,29 +77,18 @@ a {
 }
 
 .underline {
-  position: relative;
-  transition: color 0.1s;
-  white-space: nowrap;
-  z-index: 1;
-}
-.underline::before {
-  background-color: var(--red);
-  bottom: -0.1em;
-  content: '';
-  height: 0.2em;
-  left: 0;
-  position: absolute;
-  right: 0;
-  transition: height 0.1s;
-  z-index: -1;
+  background-image: linear-gradient(
+    to top,
+    var(--red),
+    var(--red) 10%,
+    transparent 10%,
+    transparent 100%
+  );
 }
 .underline.link:hover,
-.underline.link:focus-within {
+.underline.link:focus {
   color: var(--black);
-}
-.underline.link:hover::before,
-.underline.link:focus-within::before {
-  height: 1.2em;
+  background-image: linear-gradient(to top, var(--red), var(--red));
 }
 
 /* All media queries here until styled-jsx adds support */

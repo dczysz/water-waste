@@ -63,7 +63,6 @@ const Index = () => {
           <p>
             All data on this site was originally published in{' '}
             <span className="underline link">
-              {' '}
               <LinkBlank href="https://waterfootprint.org/media/downloads/Report47-WaterFootprintCrops-Vol2.pdf">
                 a 2010 report
               </LinkBlank>
