@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { foods } from '../data';
 import Layout from '../components/Layout';
-import ItemInfo from '../components/ItemInfo';
 import LinkBlank from '../components/LinkBlank';
 import Graphic from '../components/assets/Graphic';
+import Link from 'next/link';
 
 const Index = () => {
   const [item, setItem] = useState(
@@ -24,7 +24,12 @@ const Index = () => {
             <p>
               It takes <span className="underline">{item.galPerOz}</span>{' '}
               gallons of water to make one ounce of{' '}
-              <span className="underline">{item.name.toLowerCase()}</span>.
+              <span className="underline link">
+                <Link href="/info/[name]" as={`/info/${item.name}`}>
+                  <a>{item.name.toLowerCase()}</a>
+                </Link>
+              </span>
+              .
             </p>
           </div>
 
@@ -82,9 +87,6 @@ const Index = () => {
 
       <style jsx>
         {`
-          .accent {
-            color: var(--red);
-          }
           h2 + p:first-of-type {
             margin-top: 0;
           }

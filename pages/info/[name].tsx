@@ -6,13 +6,9 @@ import ItemInfo from '../../components/ItemInfo';
 
 const Info = () => {
   const router = useRouter();
-  const itemData = foods.filter(f => f.name === router.query.name)[0];
+  const item = foods.filter(f => f.name === router.query.name)[0];
 
-  return itemData ? (
-    <Layout>
-      <ItemInfo item={itemData} />
-    </Layout>
-  ) : null;
+  return <Layout>{item && <ItemInfo item={item} />}</Layout>;
 };
 
 export default Info;
