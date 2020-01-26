@@ -14,16 +14,21 @@ const Index = () => {
   return (
     <Layout>
       <section className="heading">
-        <h1>
-          How much water does food production use
-          <span className="accent">?</span>
-        </h1>
+        <header>
+          <h1>
+            Water Waste<span className="accent">.</span>
+          </h1>
+          <h2>
+            How much water does food production use
+            <span className="accent">?</span>
+          </h2>
+        </header>
 
         <div className="horizontal-container random-content">
           <div className="text">
             <p>
-              It takes <span className="underline">{item.galPerOz}</span>{' '}
-              gallons of water to make one ounce of{' '}
+              It takes <span className="bold">{item.galPerOz}</span> gallons of
+              water to make one ounce of{' '}
               <span className="underline link">
                 <Link href="/info/[name]" as={`/info/${item.name}`}>
                   <a>{item.name.toLowerCase()}</a>
@@ -87,6 +92,9 @@ const Index = () => {
 
       <style jsx>
         {`
+          .bold {
+            font-weight: bold;
+          }
           h2 + p:first-of-type {
             margin-top: 0;
           }
@@ -95,6 +103,12 @@ const Index = () => {
             max-width: 800px;
             padding: 0 1rem;
             text-align: center;
+          }
+          header {
+            margin-bottom: 3rem;
+          }
+          h1 {
+            margin-bottom: 0;
           }
           .heading .underline {
             font-weight: bold;
