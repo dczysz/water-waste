@@ -41,7 +41,7 @@ export const foods = [
   },
   {
     name: 'Fonio',
-    galPerOz: 37.08,
+    galPerOz: 37,
   },
   {
     name: 'Triticale',
@@ -85,7 +85,7 @@ export const foods = [
   },
   {
     name: 'Sugar crops',
-    galPerOz: 8.04,
+    galPerOz: 8,
   },
   {
     name: 'Beans, dry',
@@ -121,7 +121,7 @@ export const foods = [
   },
   {
     name: 'Lupins',
-    galPerOz: 14.06,
+    galPerOz: 14,
   },
   {
     name: 'Brazil nuts',
@@ -177,7 +177,7 @@ export const foods = [
   },
   {
     name: 'Olives',
-    galPerOz: 8.04,
+    galPerOz: 8,
   },
   {
     name: 'Olive oil',
@@ -193,7 +193,7 @@ export const foods = [
   },
   {
     name: 'Rapeseeds',
-    galPerOz: 24.0,
+    galPerOz: 24,
   },
   {
     name: 'Safflower seeds',
@@ -281,7 +281,7 @@ export const foods = [
   },
   {
     name: 'Onions, green',
-    galPerOz: 2.04,
+    galPerOz: 2,
   },
   {
     name: 'Onions, dry',
@@ -329,7 +329,7 @@ export const foods = [
   },
   {
     name: 'Plantains',
-    galPerOz: 12.0,
+    galPerOz: 12,
   },
   {
     name: 'Oranges',
@@ -417,7 +417,7 @@ export const foods = [
   },
   {
     name: 'Figs',
-    galPerOz: 9.07,
+    galPerOz: 9,
   },
   {
     name: 'Mangoes',
@@ -425,7 +425,7 @@ export const foods = [
   },
   {
     name: 'Avocados',
-    galPerOz: 9.05,
+    galPerOz: 9,
   },
   {
     name: 'Pineapples',
@@ -465,7 +465,7 @@ export const foods = [
   },
   {
     name: 'Pepper',
-    galPerOz: 57.0,
+    galPerOz: 57,
   },
   {
     name: 'Chillies and peppers, dry',
@@ -489,7 +489,7 @@ export const foods = [
   },
   {
     name: 'Anise, badian, fennel, corian',
-    galPerOz: 62.01,
+    galPerOz: 62,
   },
   {
     name: 'Ginger',
@@ -501,6 +501,6 @@ export const foods = [
   },
   {
     name: 'Tobacco, unmanufactured',
-    galPerOz: 44.0,
+    galPerOz: 44,
   },
 ];
