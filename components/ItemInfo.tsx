@@ -51,6 +51,7 @@ const ItemInfo: React.FC<Props> = ({ item }) => (
       {`
         .item-info {
           text-align: center;
+          margin: 0 1rem;
         }
         .drops {
           display: flex;
@@ -58,7 +59,6 @@ const ItemInfo: React.FC<Props> = ({ item }) => (
           justify-content: center;
           max-width: var(--bp-sm);
           margin: 2rem auto;
-          padding: 0 1rem;
         }
         .drop {
           --magic-number-that-looks-decent: 20;
