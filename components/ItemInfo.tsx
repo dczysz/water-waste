@@ -23,9 +23,11 @@ const ItemInfo: React.FC<Props> = ({ item }) => (
           <WaterDrop />
         </div>
       ))}
-      <div className="drop clip">
-        <WaterDrop />
-      </div>
+      {item.galPerOz - Math.floor(item.galPerOz) > 0 && (
+        <div className="drop clip">
+          <WaterDrop />
+        </div>
+      )}
     </div>
 
     <style jsx>
