@@ -144,7 +144,7 @@ const SearchBar = () => {
           background-color: var(--white);
           border-radius: var(--br);
           display: flex;
-          max-width: 40vw;
+          max-width: 100%;
           padding: 0 1rem;
           position: relative;
           width: 16rem;

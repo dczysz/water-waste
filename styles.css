@@ -97,6 +97,12 @@ a {
 
 /* All media queries here until styled-jsx adds support */
 /* Tried styled-components but got FOUC */
+@media screen and (min-width: 576px) {
+  #home-link h1 {
+    max-width: 100%;
+    opacity: 1;
+  }
+}
 @media screen and (min-width: 768px) {
   #search {
     max-width: 400px;
