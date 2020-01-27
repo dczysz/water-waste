@@ -81,18 +81,22 @@ a {
   color: var(--red);
 }
 .underline {
+  --color: var(--blue);
   background-image: linear-gradient(
     to top,
-    var(--red),
-    var(--red) 10%,
+    var(--color),
+    var(--color) 10%,
     transparent 10%,
     transparent 100%
   );
 }
+.underline.link {
+  --color: var(--red);
+}
 .underline.link:hover,
 .underline.link:focus {
+  background-image: linear-gradient(to top, var(--color), var(--color));
   color: var(--black);
-  background-image: linear-gradient(to top, var(--red), var(--red));
 }
 
 /* All media queries here until styled-jsx adds support */

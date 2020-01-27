@@ -27,8 +27,8 @@ const Index = () => {
         <div className="horizontal-container random-content">
           <div className="text">
             <p>
-              It takes <span className="bold">{item.galPerOz}</span> gallons of
-              water to make one ounce of{' '}
+              It takes <span className="underline">{item.galPerOz}</span>{' '}
+              gallons of water to make one ounce of{' '}
               <span className="underline link">
                 <Link href="/info/[name]" as={`/info/${item.name}`}>
                   <a>{item.name.toLowerCase()}</a>
@@ -92,9 +92,6 @@ const Index = () => {
 
       <style jsx>
         {`
-          .bold {
-            font-weight: bold;
-          }
           h2 + p:first-of-type {
             margin-top: 0;
           }
