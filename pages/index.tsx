@@ -1,15 +1,19 @@
+import { NextPage } from 'next';
 import { useState } from 'react';
 
+import { FoodType } from '../data/foods';
 import { foods } from '../data';
 import Layout from '../components/Layout';
 import LinkBlank from '../components/LinkBlank';
 import Graphic from '../components/assets/Graphic';
 import Link from 'next/link';
 
-const Index = () => {
-  const [item, setItem] = useState(
-    foods[Math.floor(Math.random() * foods.length)]
-  );
+interface Props {
+  initialFood: FoodType;
+}
+
+const Index: NextPage<Props> = ({ initialFood }) => {
+  const [food, setFood] = useState(initialFood);
 
   return (
     <Layout>
@@ -27,11 +31,11 @@ const Index = () => {
         <div className="horizontal-container random-content">
           <div className="text">
             <p>
-              It takes <span className="underline">{item.galPerOz}</span>{' '}
+              It takes <span className="underline">{food.galPerOz}</span>{' '}
               gallons of water to make one ounce of{' '}
               <span className="underline link">
-                <Link href="/info/[name]" as={`/info/${item.name}`}>
-                  <a>{item.name.toLowerCase()}</a>
+                <Link href="/info/[name]" as={`/info/${food.name}`}>
+                  <a>{food.name.toLowerCase()}</a>
                 </Link>
               </span>
               .
@@ -40,7 +44,7 @@ const Index = () => {
 
           <button
             onClick={() =>
-              setItem(foods[Math.floor(Math.random() * foods.length)])
+              setFood(foods[Math.floor(Math.random() * foods.length)])
             }
           >
             Random Food
@@ -166,5 +170,9 @@ const Index = () => {
     </Layout>
   );
 };
+
+Index.getInitialProps = _ctx => ({
+  initialFood: foods[Math.floor(Math.random() * foods.length)],
+});
 
 export default Index;

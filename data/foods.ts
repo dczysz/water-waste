@@ -1,4 +1,9 @@
-export const foods = [
+export type FoodType = {
+  name: string;
+  galPerOz: number;
+};
+
+export const foods: FoodType[] = [
   {
     name: 'Wheat',
     galPerOz: 16.41,
